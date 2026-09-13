@@ -5,6 +5,7 @@ void main() {
   parte1();
   parte2();
   parte3();
+  parte4();
 }
 
 // -- Parte 1 --
@@ -92,4 +93,34 @@ double promedioSemestre(List<double> notas) {
     suma = suma + n;
   }
   return suma / notas.length;
+}
+
+// -- Parte 4 --
+void parte4() {
+  print('----- PARTE 4: colecciones -----');
+
+  // lista, porque aca si puede repetirse un nombre si hubo un error al
+  // pasar asistencia
+  List<String> asistentesHoy = ['Ana', 'Carlos', 'Ana', 'Luisa'];
+  print('Asistentes de hoy: $asistentesHoy');
+
+  // set, porque no tiene sentido que un lenguaje aparezca dos veces en
+  // lo que el estudiante ya sabe
+  Set<String> lenguajesConocidos = {'Dart', 'Java', 'Python'};
+  lenguajesConocidos.add('Dart'); // esto no deberia cambiar nada
+  print('Lenguajes conocidos: $lenguajesConocidos');
+
+  // probando que pasaria si en vez de set usara una lista
+  List<String> lenguajesConLista = ['Dart', 'Java', 'Python'];
+  lenguajesConLista.add('Dart');
+  print('Si fuera lista se repite: $lenguajesConLista');
+
+  // map, porque necesito buscar rapido la nota de un estudiante usando
+  // su nombre como llave
+  Map<String, double> notasPorEstudiante = {
+    'Ana': 4.5,
+    'Carlos': 3.2,
+    'Luisa': 2.9,
+  };
+  print('Nota de Carlos: ${notasPorEstudiante['Carlos']}');
 }
