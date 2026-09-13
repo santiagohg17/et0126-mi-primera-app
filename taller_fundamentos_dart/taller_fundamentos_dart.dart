@@ -265,6 +265,18 @@ void retoIntegrador() {
   tareas[3].completada = true; // ya vi la serie jaja
 
   mostrarTareas(tareas);
+
+  print('Tareas pendientes: ${contarPendientes(tareas)}');
+}
+
+int contarPendientes(List<Tarea> tareas) {
+  int pendientes = 0;
+  for (Tarea t in tareas) {
+    if (!t.completada) {
+      pendientes++;
+    }
+  }
+  return pendientes;
 }
 
 void mostrarTareas(List<Tarea> tareas) {
