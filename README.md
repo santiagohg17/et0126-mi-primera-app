@@ -22,7 +22,5 @@ En la carpeta `taller_fundamentos_dart/` esta el taller de fundamentos de Dart
 (enunciado + solucion en `taller_fundamentos_dart.dart`). Lo resolvi primero
 en DartPad probando cada parte por separado y despues lo copie aca.
 
-Uso de IA: use IA (Claude) como copiloto para revisar la logica de algunas
-partes y para acomodar comentarios, siguiendo la politica del curso. El
-diseño de las variables, funciones y clases lo decidi yo y puedo explicar
-cualquier linea del codigo.
+Uso de IA: use IA (Gemini y Claude) como apoyo en algunas partes, siguiendo
+la politica del curso.
