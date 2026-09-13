@@ -7,6 +7,7 @@ void main() {
   parte3();
   parte4();
   parte5A();
+  parte5B();
 }
 
 // -- Parte 1 --
@@ -153,4 +154,39 @@ void parte5A() {
 
   // uso for porque ya se cuantas notas hay en la lista, entonces solo
   // recorro todo una vez y listo
+}
+
+// Problema B: intentos de contrasenia en la inscripcion
+void parte5B() {
+  print('----- PARTE 5B: intentos de contrasenia -----');
+
+  String contraseniaCorrecta = '1234';
+  List<String> intentosDelUsuario = ['0000', '1111', '1234'];
+
+  int intentos = 0;
+  int maximoIntentos = 3;
+  bool acceso = false;
+
+  while (intentos < maximoIntentos && !acceso) {
+    String intentoActual = intentosDelUsuario[intentos];
+    print('Intentando con: $intentoActual');
+
+    if (intentoActual == contraseniaCorrecta) {
+      acceso = true;
+      print('Contrasenia correcta, acceso concedido');
+    } else {
+      print('Contrasenia incorrecta');
+    }
+    intentos++;
+  }
+
+  if (!acceso) {
+    print('Se agotaron los intentos, acceso bloqueado');
+  }
+
+  // aca use while porque no se sabe de antemano cuantos intentos le van a
+  // alcanzar a la persona, puede acertar de una o gastar todos, entonces
+  // toca ir preguntando hasta que pase alguna de las dos cosas. con un for
+  // tocaria igual controlar la condicion de "ya acerto" por dentro,
+  // entonces el while queda mas directo para este caso
 }
