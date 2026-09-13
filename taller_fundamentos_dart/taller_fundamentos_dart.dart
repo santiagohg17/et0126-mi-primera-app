@@ -6,6 +6,7 @@ void main() {
   parte2();
   parte3();
   parte4();
+  parte5A();
 }
 
 // -- Parte 1 --
@@ -123,4 +124,33 @@ void parte4() {
     'Luisa': 2.9,
   };
   print('Nota de Carlos: ${notasPorEstudiante['Carlos']}');
+}
+
+// -- Parte 5 --
+// Problema A: clasificar el rendimiento de un curso completo
+void parte5A() {
+  print('----- PARTE 5A: clasificacion de notas -----');
+
+  List<double> notasCurso = [2.5, 3.8, 4.7, 1.9, 3.0, 4.9, 3.5];
+
+  int reprobados = 0;
+  int aprobados = 0;
+  int sobresalientes = 0;
+
+  for (double nota in notasCurso) {
+    if (nota < 3.0) {
+      reprobados++;
+    } else if (nota < 4.5) {
+      aprobados++;
+    } else {
+      sobresalientes++;
+    }
+  }
+
+  print('Reprobados: $reprobados');
+  print('Aprobados: $aprobados');
+  print('Sobresalientes: $sobresalientes');
+
+  // uso for porque ya se cuantas notas hay en la lista, entonces solo
+  // recorro todo una vez y listo
 }
