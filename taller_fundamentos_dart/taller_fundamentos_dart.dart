@@ -9,6 +9,7 @@ void main() {
   parte5A();
   parte5B();
   parte6();
+  retoIntegrador();
 }
 
 // -- Parte 1 --
@@ -238,4 +239,45 @@ void parte6() {
   // listas separadas (nombres, semestres, promedios) sincronizadas por
   // posicion, con que se me desordene una sola vez ya quedan mezclados
   // los datos de un estudiante con los de otro
+}
+
+// -- Reto integrador: gestor de tareas --
+class Tarea {
+  String titulo;
+  String prioridad; // puede ser 'alta', 'media' o 'baja'
+  bool completada;
+
+  Tarea(this.titulo, this.prioridad, {this.completada = false});
+}
+
+void retoIntegrador() {
+  print('----- RETO INTEGRADOR: gestor de tareas -----');
+
+  List<Tarea> tareas = [
+    Tarea('Estudiar para el parcial', 'alta'),
+    Tarea('Lavar la ropa', 'baja'),
+    Tarea('Entregar taller de dart', 'alta'),
+    Tarea('Ver la serie', 'baja'),
+    Tarea('Hacer ejercicio', 'media'),
+  ];
+
+  // marco una tarea como completada despues de ya haberla creado
+  tareas[3].completada = true; // ya vi la serie jaja
+
+  mostrarTareas(tareas);
+}
+
+void mostrarTareas(List<Tarea> tareas) {
+  for (Tarea t in tareas) {
+    String estado = t.completada ? '[hecha]' : '[pendiente]';
+    String marca;
+    if (t.prioridad == 'alta') {
+      marca = '!!!';
+    } else if (t.prioridad == 'media') {
+      marca = '!!';
+    } else {
+      marca = '!';
+    }
+    print('$marca ${t.titulo} - ${t.prioridad} $estado');
+  }
 }
