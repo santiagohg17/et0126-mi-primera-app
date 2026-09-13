@@ -8,6 +8,7 @@ void main() {
   parte4();
   parte5A();
   parte5B();
+  parte6();
 }
 
 // -- Parte 1 --
@@ -189,4 +190,52 @@ void parte5B() {
   // toca ir preguntando hasta que pase alguna de las dos cosas. con un for
   // tocaria igual controlar la condicion de "ya acerto" por dentro,
   // entonces el while queda mas directo para este caso
+}
+
+// -- Parte 6 --
+class Estudiante {
+  String nombre;
+  List<double> notas;
+
+  Estudiante(this.nombre, this.notas);
+
+  double get promedio {
+    if (notas.isEmpty) return 0;
+    double suma = 0;
+    for (double n in notas) {
+      suma += n;
+    }
+    return suma / notas.length;
+  }
+
+  // considero que un estudiante esta al dia si no tiene ninguna nota
+  // reprobada
+  bool estaAlDia() {
+    for (double n in notas) {
+      if (n < 3.0) return false;
+    }
+    return true;
+  }
+}
+
+void parte6() {
+  print('----- PARTE 6: clases y POO -----');
+
+  List<Estudiante> estudiantes = [
+    Estudiante('Ana', [4.5, 4.0, 3.8]),
+    Estudiante('Carlos', [2.5, 3.0, 4.0]), // este no esta al dia
+    Estudiante('Luisa', [3.5, 3.6, 4.1]),
+  ];
+
+  for (Estudiante e in estudiantes) {
+    String estado = e.estaAlDia() ? 'esta al dia' : 'NO esta al dia';
+    String prom = e.promedio.toStringAsFixed(1);
+    print('${e.nombre} (promedio $prom) -> $estado');
+  }
+
+  // la ventaja de usar una clase es que el nombre y las notas de cada
+  // estudiante quedan juntos en un solo objeto. si en cambio tuviera 3
+  // listas separadas (nombres, semestres, promedios) sincronizadas por
+  // posicion, con que se me desordene una sola vez ya quedan mezclados
+  // los datos de un estudiante con los de otro
 }
