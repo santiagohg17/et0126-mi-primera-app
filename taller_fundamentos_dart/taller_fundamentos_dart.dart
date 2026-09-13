@@ -226,6 +226,7 @@ void parte6() {
     Estudiante('Ana', [4.5, 4.0, 3.8]),
     Estudiante('Carlos', [2.5, 3.0, 4.0]), // este no esta al dia
     Estudiante('Luisa', [3.5, 3.6, 4.1]),
+    Estudiante('Pedro', []), // caso limite, no tiene notas registradas
   ];
 
   for (Estudiante e in estudiantes) {
