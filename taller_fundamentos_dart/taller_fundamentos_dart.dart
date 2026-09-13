@@ -3,6 +3,7 @@
 
 void main() {
   parte1();
+  parte2();
 }
 
 // -- Parte 1 --
@@ -29,4 +30,34 @@ void parte1() {
   // los anios que lleva en la carrera), tocaria estar convirtiendola con
   // int.parse() cada vez y ahi es facil que el programa se caiga si el
   // dato llega mal escrito
+}
+
+// -- Parte 2 --
+// no todos los estudiantes tienen apodo registrado en el sistema
+void parte2() {
+  print('----- PARTE 2: null safety -----');
+
+  String? apodo1 = null; // este si puede ser null, por eso el ?
+  String? apodo2 = 'Santi';
+
+  mostrarApodo(apodo1);
+  mostrarApodo(apodo2);
+
+  // el apodo puede ser null porque no es un dato que todo estudiante tenga
+  // registrado, en cambio el nombre, la edad o el promedio de la parte 1
+  // si son datos que siempre existen entonces esos no deberian ser nullable
+
+  // que pasa si uso el operador ! sobre algo que es null:
+  // String pruebaError = apodo1!;
+  // si descomento esa linea el codigo SI compila normal, el error solo
+  // sale cuando se ejecuta (Null check operator used on a null value).
+  // osea el error aparece al correr el programa, no al escribirlo
+}
+
+void mostrarApodo(String? apodo) {
+  if (apodo != null) {
+    print('Apodo: $apodo');
+  } else {
+    print('Este estudiante no tiene apodo registrado');
+  }
 }
