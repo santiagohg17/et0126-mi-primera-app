@@ -267,6 +267,8 @@ void retoIntegrador() {
   mostrarTareas(tareas);
 
   print('Tareas pendientes: ${contarPendientes(tareas)}');
+
+  contarPorPrioridad(tareas); // esto es el bonus
 }
 
 int contarPendientes(List<Tarea> tareas) {
@@ -278,6 +280,27 @@ int contarPendientes(List<Tarea> tareas) {
   }
   return pendientes;
 }
+
+// bonus: cuantas tareas hay por cada nivel de prioridad
+void contarPorPrioridad(List<Tarea> tareas) {
+  Map<String, int> conteo = {};
+
+  for (Tarea t in tareas) {
+    if (conteo.containsKey(t.prioridad)) {
+      conteo[t.prioridad] = conteo[t.prioridad]! + 1;
+    } else {
+      conteo[t.prioridad] = 1;
+    }
+  }
+
+  print('Tareas por prioridad: $conteo');
+}
+
+// si mañana piden agregarle una fecha limite opcional a cada tarea, con
+// esta clase Tarea no seria tan grave: solo tocaria sumar un campo mas
+// como DateTime? fechaLimite en el constructor. como toda la info de la
+// tarea ya esta junta en un solo objeto, no tengo que andar cambiando
+// cosas en varias listas sueltas como pasaria si no hubiera usado la clase
 
 void mostrarTareas(List<Tarea> tareas) {
   for (Tarea t in tareas) {
