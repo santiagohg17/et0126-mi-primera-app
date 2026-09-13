@@ -4,6 +4,7 @@
 void main() {
   parte1();
   parte2();
+  parte3();
 }
 
 // -- Parte 1 --
@@ -60,4 +61,35 @@ void mostrarApodo(String? apodo) {
   } else {
     print('Este estudiante no tiene apodo registrado');
   }
+}
+
+// -- Parte 3 --
+void parte3() {
+  print('----- PARTE 3: funciones -----');
+
+  print('Aprueba con 3.5? ${aprueba(3.5)}');
+  print('Aprueba con 2.0? ${aprueba(2.0)}');
+
+  List<double> notasSemestre = [4.0, 3.5, 2.8, 4.5];
+  print('Promedio del semestre: ${promedioSemestre(notasSemestre)}');
+
+  List<double> notasVacias = [];
+  print('Promedio con lista vacia: ${promedioSemestre(notasVacias)}');
+}
+
+// funcion flecha, es solo una comparacion no necesita mas
+bool aprueba(double nota) => nota >= 3.0;
+
+double promedioSemestre(List<double> notas) {
+  // si la lista llega vacia no hay por que dividir, si no reviso esto
+  // el programa podria dar un error o un resultado raro (NaN)
+  if (notas.isEmpty) {
+    return 0;
+  }
+
+  double suma = 0;
+  for (double n in notas) {
+    suma = suma + n;
+  }
+  return suma / notas.length;
 }
