@@ -1,0 +1,59 @@
+void main() {
+  parte1();
+  parte2();
+  retoIntegrador();
+}
+
+void parte1() {
+  print('----- Resumen de compra -----');
+  String nombre = 'Usuario';
+  print('Cliente: $nombre');
+}
+
+void parte2() {
+  String? nombreCliente = null;
+  String nombreFinal = (nombreCliente == null || nombreCliente.isEmpty) 
+      ? 'Cliente invitado' 
+      : nombreCliente;
+
+  mostrarApodo(nombreFinal);
+}
+
+void mostrarApodo(String apodo) {
+  print('Apodo: $apodo');
+}
+
+void retoIntegrador() {
+  final List<Map<String, dynamic>> productos = [
+    {'nombre': 'Audífonos', 'precio': 80000.0, 'cantidad': 4},
+    {'nombre': 'Teclado', 'precio': 120000.0, 'cantidad': 2},
+    {'nombre': 'Mouse', 'precio': 60000.0, 'cantidad': 0},
+  ];
+
+  mostrarProductos(productos);
+}
+
+void mostrarProductos(List<Map<String, dynamic>> productos) {
+  for (var producto in productos) {
+    double subtotal = calcularSubtotal(
+      (producto['precio'] as num).toDouble(), 
+      producto['cantidad'] as int
+    );
+    double descuento = calcularDescuento3(subtotal);
+    double total = calcularTotal(subtotal, descuento);
+
+    print('Producto: ${producto['nombre']} | Total: \$${total.toStringAsFixed(2)}');
+  }
+}
+
+double calcularSubtotal(double precio, int cantidad) {
+  return precio * cantidad;
+}
+
+double calcularDescuento3(double subtotal) {
+  return subtotal > 200000 ? subtotal * 0.10 : 0.0;
+}
+
+double calcularTotal(double subtotal, double descuento) {
+  return subtotal - descuento;
+}
