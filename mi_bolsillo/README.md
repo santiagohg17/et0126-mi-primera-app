@@ -3,8 +3,8 @@
 App movil hecha en Flutter para el curso **ET0126 · Programación de Dispositivos Móviles** de la I.U. Pascual Bravo.
 
 **Entregas en este repositorio:**
-- **Taller Flutter 1** (inicio de la app): ver el tag [`taller-1`](../../tree/taller-1).
-- **Taller de continuación** (formularios y servicio en memoria): ver la sección [Taller de continuación](#taller-de-continuación-pagos-pendientes) y el tag [`taller-2`](../../tree/taller-2).
+- **Taller Flutter 1** (inicio de la app): ver el tag [`taller-1`](https://github.com/santiagohg17/et0126-mi-primera-app/tree/taller-1/mi_bolsillo).
+- **Taller de continuación** (formularios y servicio en memoria): ver la sección [Taller de continuación](#taller-de-continuación-pagos-pendientes) y el tag [`taller-2`](https://github.com/santiagohg17/et0126-mi-primera-app/tree/taller-2/mi_bolsillo).
 
 ## Propuesta de la app
 
@@ -53,8 +53,8 @@ Escogi **SharedPreferences** porque los datos de esta primera versión son pocos
 1. Tener instalado Flutter (yo use la versión 3.47) y un emulador Android o un celular con depuración USB.
 2. Clonar el repositorio:
    ```bash
-   git clone https://github.com/santiagohg17/et0126-mi-bolsillo.git
-   cd et0126-mi-bolsillo
+   git clone https://github.com/santiagohg17/et0126-mi-primera-app.git
+   cd et0126-mi-primera-app/mi_bolsillo
    ```
 3. Descargar los paquetes:
    ```bash

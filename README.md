@@ -24,3 +24,22 @@ en DartPad probando cada parte por separado y despues lo copie aca.
 
 Uso de IA: use IA (Gemini y Claude) como apoyo en algunas partes, siguiendo
 la politica del curso.
+
+## Proyecto de clase: Mi Bolsillo (ET0126)
+
+En la carpeta [`mi_bolsillo/`](mi_bolsillo/) esta la app que escogi como proyecto de clase:
+**Mi Bolsillo**, una app para que los estudiantes controlen sus gastos y no se queden sin plata
+antes de fin de mes. Toda la explicación esta en [`mi_bolsillo/README.md`](mi_bolsillo/README.md).
+
+- **Taller Flutter 1** (inicio de la app: gastos, presupuesto, Canvas y SharedPreferences):
+  [tag `taller-1`](https://github.com/santiagohg17/et0126-mi-primera-app/tree/taller-1/mi_bolsillo)
+- **Taller de continuación** (formulario de pagos pendientes con `form_field_validator` y servicio en memoria):
+  [tag `taller-2`](https://github.com/santiagohg17/et0126-mi-primera-app/tree/taller-2/mi_bolsillo)
+
+Para correrla:
+
+```bash
+cd mi_bolsillo
+flutter pub get
+flutter run
+```
