@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "826029516171",
+    "project_id": "mi-bolsillo-app-4821",
+    "storage_bucket": "mi-bolsillo-app-4821.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826029516171:android:57917f63140e36245efb8e",
+        "android_client_info": {
+          "package_name": "co.edu.pascualbravo.mi_bolsillo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5tK3AA5klmq7Sd_8YhyvDWQLHj8Ct0og"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

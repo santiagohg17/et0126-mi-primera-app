@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-import 'screens/home_screen.dart';
+import 'firebase_options.dart';
+import 'widgets/auth_gate.dart';
 
-void main() {
+// main ahora es async porque hay que inicializar Firebase antes de arrancar.
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MiBolsilloApp());
 }
 
@@ -17,7 +24,8 @@ class MiBolsilloApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
       ),
-      home: const HomeScreen(),
+      // El AuthGate decide si mostrar el login o la app.
+      home: const AuthGate(),
     );
   }
 }

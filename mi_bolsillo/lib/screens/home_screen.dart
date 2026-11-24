@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../models/gasto.dart';
+import '../services/auth_service.dart';
 import '../services/gastos_service.dart';
 import '../services/validaciones.dart';
 import '../widgets/anillo_presupuesto.dart';
@@ -149,6 +150,11 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: const Icon(Icons.edit),
             tooltip: 'Cambiar presupuesto',
             onPressed: _cambiarPresupuesto,
+          ),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Cerrar sesion',
+            onPressed: () => AuthService().cerrarSesion(),
           ),
         ],
       ),
